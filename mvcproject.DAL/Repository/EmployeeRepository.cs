@@ -10,5 +10,11 @@ namespace mvcproject.DAL.Repository
 {
    public class EmployeeRepository:Repository<Employee>,IEmployeeRepository
     {
+        public ICollection<EmpReport> AllEmp()
+        {
+            return db.Database.SqlQuery<EmpReport>("AllEmpL").ToList();
+        }
+       
+
     }
 }

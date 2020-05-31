@@ -11,8 +11,16 @@ namespace mvcproject.BLL.Manager
 {
   public  class EmployeeManager:Manager<Employee>,IEmployeeManager
     {
+        private readonly IEmployeeRepository _employeeRepository;
         public EmployeeManager(IEmployeeRepository repository) : base(repository)
         {
+            _employeeRepository = repository;
+
+        }
+
+        public ICollection<EmpReport> AllEmp()
+        {
+            return _employeeRepository.AllEmp();
         }
     }
 }

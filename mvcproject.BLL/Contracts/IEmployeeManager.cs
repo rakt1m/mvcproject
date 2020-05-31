@@ -9,5 +9,6 @@ namespace mvcproject.BLL.Contracts
 {
    public interface IEmployeeManager:IManager<Employee>
     {
+        ICollection<EmpReport> AllEmp();
     }
 }

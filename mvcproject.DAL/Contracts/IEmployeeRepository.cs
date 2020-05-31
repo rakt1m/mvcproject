@@ -9,5 +9,6 @@ namespace mvcproject.DAL.Contracts
 {
    public interface IEmployeeRepository:IRepository<Employee>
     {
+        ICollection<EmpReport> AllEmp();
     }
 }
