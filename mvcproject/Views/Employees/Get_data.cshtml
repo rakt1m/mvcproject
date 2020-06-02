@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Get_data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Get_data</h2>
+<p>
+    @Html.ActionLink("Create New", "AddEmp")
+
+    <a href="@Url.Action("EmpList","Report")" target="_blank"><i class="fa fa-print"></i> Employee List</a>
+</p>
+
+<style>
+
+    .tableData {
+
+        border-left: solid 1px #D8C3C3;
+
+        border-top: solid 1px #D8C3C3;
+
+    }
+
+ 
+
+    .tableData tr {
+
+    }
+
+ 
+
+    .tableData td, .tableData th {
+
+        border-right: solid 1px #D8C3C3;
+
+        border-bottom: solid 1px #D8C3C3;
+
+        text-align: left;
+
+        padding: 5px;
+
+    }
+
+ 
+
+    .tableData td {
+
+    }
+
+ 
+
+    .tableData th {
+
+        background-color: #FAFAFA;
+
+        padding: 7px 5px;
+
+        border-bottom-color: #9C9C9C;
+
+    }
+
+ 
+
+    .odd {
+
+        background-color: #f3f3f3;
+
+    }
+
+ 
+
+    .even {
+
+        background-color: #ffffff;
+
+    }
+
+</style>
+<div ng-controller="HomeController">
+
+    <table class="tableData">
+
+        <tr>
+
+       
+
+            <th>Email</th>
+
+         
+
+            <th>Name</th>
+
+            <th>Phone</th>
+
+
+            <th>Actions</th>
+
+        </tr>
+
+        <tr ng-repeat="e in record" ng-class-even="'even'" ng-class-odd="'odd'">
+
+           
+
+            <td>{{e.Email}}</td>
+
+            <td>{{e.Name}}</td>
+
+            <td>{{e.Phone}}</td>
+
+        
+
+            <td><a href="/Employees/Update_data?id={{e.Id}}">Update</a> || <a ng-click="deleterecord(e.Id)">Delete</a></td>
+
+            
+
+        </tr>
+
+    </table>
+
+</div>
+
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/angularcotroller/EmpController.js"></script>
+
+

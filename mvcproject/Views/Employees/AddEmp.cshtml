@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "AddEmp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-app="Homeapp" ng-controller="HomeController">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-2"></div>
+
+            <div class="col-sm-8">
+
+                <div class="form-group">
+
+                    <label>Email</label>
+
+                    <input type="text" ng-model="Employee.Email" class="form-control" />
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>Name</label>
+
+                    <input type="text" ng-model="Employee.Name" class="form-control" />
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Phone</label>
+
+                    <input type="text" ng-model="Employee.Phone" class="form-control" />
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <input type="button" class="btn btn-primary" ng-click="savedata()" value="{{btntext}}" />
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-2"></div>
+           
+        </div>
+
+    </div>
+    @Html.ActionLink("Back Index", "Get_data")
+</div>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/angularcotroller/EmpController.js"></script>
+
+
+

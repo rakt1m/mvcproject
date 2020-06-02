@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "update_data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>update_data</h2>
+
+<div ng-app="Homeapp" ng-controller="HomeController" data-ng-init="loadrecord(@Convert.ToInt32(Request.QueryString["id"]))">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-2"></div>
+
+            <div class="col-sm-8">
+
+                <div class="form-group">
+
+                    <label>Email</label>
+
+                    <input type="text" ng-model="Employee.Email" class="form-control" />
+
+                </div>
+
+            
+                <div class="form-group">
+
+                    <label>Name</label>
+
+                    <input type="text" ng-model="Employee.Name" class="form-control" />
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Phone</label>
+
+                    <input type="text" ng-model="Employee.Phone" class="form-control" />
+
+                </div>
+
+               
+
+                <div class="form-group">
+
+                    <input type="button" class="btn btn-primary" ng-click="updatedata()" value="{{btntext}}" />
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-2"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+ 
+
+<script src="~/Scripts/angular.min.js"></script>
+
+<script src="~/Scripts/angularcotroller/EmpController.js"></script>

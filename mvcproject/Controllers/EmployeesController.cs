@@ -26,7 +26,25 @@ namespace mvcproject.Controllers
         {
             return View(_iEmployeeManager.GetAll().ToList());
         }
+        public ActionResult Get_data()
+        {
+            return View();
+        }
+        public ActionResult Update_data(int id)
 
+        {
+            Employee employee = _iEmployeeManager.GetById(id);
+            return View(employee);
+
+        }
+        public ActionResult delete_record(int id)
+
+        {
+
+            return View();
+
+        }
+      
         // GET: Employees/Details/5
         public ActionResult Details(long? id)
         {
@@ -121,6 +139,9 @@ namespace mvcproject.Controllers
             return RedirectToAction("Index");
         }
 
-      
+        public ActionResult AddEmp()
+        {
+            return View();
+        }
     }
 }
